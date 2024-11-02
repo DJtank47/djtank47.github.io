@@ -56,7 +56,10 @@ const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
 const questionNumberElement = document.getElementById("question-number"); // Elemento per il numero della domanda
 const feedbackElement = document.getElementById("feedback"); // Elemento per il feedback
-const submitButton = document.getElementById("submit");
+const submitButton = document.getElementById("next"); // Bottone per passare alla prossima domanda
+
+
+let answered = false; //variabile per controllare se l'utente ha risposto alla domanda corrente
 
 let currentQuestion = 0;
 let score = 0;
@@ -75,10 +78,14 @@ function showQuestion() {
         optionsElement.appendChild(button);
         button.addEventListener("click", selectAnswer);
     });
+
+    submitButton.addEventListener("click", nextQuestion);
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target;
+
+    if (!answered) {
+        const selectedButton = e.target;
     const answer = quizData[currentQuestion].answer;
 
     if (selectedButton.innerText === answer) {
@@ -89,8 +96,10 @@ function selectAnswer(e) {
         feedbackElement.innerText = `SBAGLIATO! La risposta corretta era: "${answer}".`; // Feedback per la risposta sbagliata
         feedbackElement.style.color = "red";
     }
+    answered = true;
+    }
 
-    currentQuestion++;
+    /*currentQuestion++;
 
     setTimeout(() => {
         if (currentQuestion < quizData.length) {
@@ -99,7 +108,23 @@ function selectAnswer(e) {
             showResult();
         }
     }, 2000); // Pausa prima di mostrare la prossima domanda o il risultato
+    */
 }
+
+function nextQuestion() {
+    if(answered) {
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+        answered = false;
+    }else{
+        alert("Devi rispondere alla domanda prima di passare alla successiva!");
+    }
+}
+
 
 function showResult() {
     let message = "";
