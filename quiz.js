@@ -1,14 +1,14 @@
 // Array di oggetti contenente le domande del quiz, le opzioni e la risposta corretta
 const quizData = [
     {
-      question: "What is the capital of France?",
-      options: ["Paris", "Madrid", "Rome", "Berlin"],
-      answer: "Paris"
+      question: "Per quale di queste squadre non ha mai giocato Kakà?",
+      options: ["Milan", "Real Madrid", "Juventus", "San Paolo"],
+      answer: "Juventus"
     },
     {
-      question: "What is the largest planet in our solar system?",
-      options: ["Jupiter", "Saturn", "Mars", "Earth"],
-      answer: "Jupiter"
+      question: "In che anno Kakà ha vinto il Pallone d'Oro?",
+      options: ["2006", "2007", "2008", "2010"],
+      answer: "2007"
     },
     // Aggiungi altre domande qui...
 ];
