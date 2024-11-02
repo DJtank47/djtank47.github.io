@@ -1,16 +1,16 @@
 #quiz {
-    max-width: 1000px;
-    max-height: 500px;
+    color: white;
     margin: 0 auto;
     padding: 20px;
-    background-color: #d9082e;
+    /*background-color: #d9082e;*/
+    /*background-color: #333;*/
+    background-color: rgba(51, 51, 51, 0.8); /* Colore di sfondo nero con trasparenza */
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(198, 222, 60, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Effetto ombra */
   }
   
   #quizTitle {
     text-align: center;
-    color: #333333;
   }
   
   #question {
@@ -19,7 +19,7 @@
   
   #options {
     display: grid;
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: repeat(2, 1fr);
   }
   

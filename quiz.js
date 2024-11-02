@@ -1,4 +1,4 @@
-// Array di oggetti contenente le domande del quiz, le opzioni e la risposta corretta
+// Array di oggetti JSON contenente le domande del quiz, le opzioni e la risposta corretta
 const quizData = [
     {
         question: "Qual è il nome completo di Kakà?",
