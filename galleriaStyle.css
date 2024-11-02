@@ -3,6 +3,9 @@
     max-width: 100%; /* Occupa tutta la larghezza disponibile */
     margin: auto;
     overflow: hidden; /* Assicura che le frecce non escano dai bordi */
+    background-color: rgba(51, 51, 51, 0.6);; /* Sfondo semi-trasparente */
+    border-radius: 10px;
+    color: #fff;
 }
 
 .mySlides {
@@ -13,16 +16,17 @@
 
 img {
     width: 100%; /* Adatta le immagini alla larghezza del contenitore */
+    max-width: 60%;
     border-radius: 10px;
+    margin: 20px;
+    border: 2px solid #000;
 }
 
 .description {
-    color: #fff;
     font-size: 18px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
-    border-radius: 0 0 10px 10px; /* Arrotonda solo gli angoli inferiori */
-    margin-top: -5px; /* Un piccolo margine negativo per far combaciare lo sfondo con l'immagine */
+    background-color: rgba(0, 0, 0, 0.6); /* Sfondo semi-trasparente */
+    margin-top: 0; /* Un piccolo margine negativo per far combaciare lo sfondo con l'immagine */
 }
 
 
@@ -33,13 +37,12 @@ img {
     transform: translateY(-50%); /* Centra verticalmente le frecce */
     width: auto;
     padding: 16px;
-    color: white;
     font-weight: bold;
     font-size: 24px; /* Aumenta la dimensione per visibilità */
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10; /* Assicura che siano sopra le immagini */
+    background-color: rgba(0, 0, 0, 0.6);
+    /*z-index: 10; /* Assicura che siano sopra le immagini */
 }
 
 .next {
