@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Mondo di Kakà</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="galleriaStyle.css">
 </head>
 <body id="corpo">
     <header>
@@ -16,7 +17,38 @@
         </div>
     </header>
     <main id="contenuto">
-        <p>GALLERIA/p>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="img/kaka1.jpg" alt="Foto">
+                <div class="description">Kakà segna il primo gol con la maglia del Milan il 5 ottobre 2003 durante il derby con l'Inter</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="img/kaka2.jpg" alt="Foto">
+                <div class="description">Prima doppietta in campionato l'11 gennaio 2004: la segna alla Reggina</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="img/kaka3.jpg" alt="Foto">
+                <div class="description">Uno dei più bei gol di Kakà al Milan il 13 settembre 2005 al Fenerbahce dopo uno slalom fantastico</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="img/kaka4.jpg" alt="Foto">
+                <div class="description">Kakà esulta per il gol alla Juve il 29 ottobre 2005</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="img/kaka5.jpg" alt="Foto">
+                <div class="description">Esultanza di Kakà al Massimino</div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
     </main>
+    <script src="galleria.js"></script>
 </body>
 </html>

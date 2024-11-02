@@ -1,0 +1,72 @@
+.slideshow-container {
+    position: relative;
+    max-width: 100%; /* Occupa tutta la larghezza disponibile */
+    margin: auto;
+    overflow: hidden; /* Assicura che le frecce non escano dai bordi */
+}
+
+.mySlides {
+    display: none;
+    position: relative;
+    text-align: center; /* Centra l'immagine e la descrizione */
+}
+
+img {
+    width: 100%; /* Adatta le immagini alla larghezza del contenitore */
+    border-radius: 10px;
+}
+
+.description {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
+    border-radius: 0 0 10px 10px; /* Arrotonda solo gli angoli inferiori */
+    margin-top: -5px; /* Un piccolo margine negativo per far combaciare lo sfondo con l'immagine */
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Posiziona verticalmente al centro */
+    transform: translateY(-50%); /* Centra verticalmente le frecce */
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px; /* Aumenta la dimensione per visibilità */
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10; /* Assicura che siano sopra le immagini */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #545454;
+}
