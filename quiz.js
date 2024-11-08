@@ -132,7 +132,7 @@ function showResult() {
 
     // Imposta un messaggio in base al punteggio ottenuto
     if (score === quizData.length) {
-        message = "Perfetto! Sei un vero esperto di Kakà! Passerai sicuramente l'esame di Reti di Calcolatori!";
+        message = "Perfetto! Sei un vero esperto di Kakà! Complimenti!";
         image = "img/result1.jpg";
     } else if (score >= quizData.length * 0.75) {
         message = "Ottimo lavoro! Hai risposto correttamente alla maggior parte delle domande.";
@@ -141,7 +141,7 @@ function showResult() {
         message = "Buon tentativo! Puoi migliorare studiando un po' di più su Kakà.";
         image = "img/result3.jpg";
     } else if (score >= 1) {
-        message = "Non andiamo bene... Se lo scopre il prof Bartoli sono dolori, studia e ritenta!";
+        message = "Non andiamo bene... Se lo scopre il prof sono dolori, studia e ritenta!";
         image = "img/result4.jpg";
     } else {
         message = "BASTARDO BIANCONERO! Fuori da questo quiz, non sei degno di rispondere alle domande su Kakà!";
