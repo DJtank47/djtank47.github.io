@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Il Mondo di Kakà</title>
-  <title>Quiz</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="quizStyle.css">
 </head>
 <body>
+
   <header>
     <h1 id="pageTitle">Il Mondo di Kakà</h1>
     <div id="topBar">
@@ -16,21 +16,23 @@
         <a href="galleria.html"> GALLERIA </a>
         <a href="quiz.html"> QUIZ </a>
     </div>
-</header>
-    <main>
-      <div id="quiz">
-        <h1 id="quizTitle">Quiz su Kakà</h1>
-        <div id="question-number"></div> <!-- Elemento per il numero della domanda -->
-        <div id="question"></div>
-        <div id="options"></div>
-        <p id="feedback"></p> <!-- Elemento per mostrare il feedback -->
-        <button id="next">Avanti</button>
-      </div>
-    </main>
-    <footer id="topBar" style="background-color: #333; color: #fff; padding: 5px 0;">
+  </header>
+
+  <main>
+    <div id="quiz">
+      <h1 id="quizTitle">Quiz su Kakà</h1>
+      <div id="question-number"></div> <!-- Elemento per il numero della domanda -->
+      <div id="question"></div>
+      <div id="options"></div>
+      <p id="feedback"></p> <!-- Elemento per mostrare il feedback -->
+      <button id="next">Avanti</button>
+    </div>
+  </main>
+
+    <footer style="background-color: #333; color: #fff; padding: 10px 0; text-align: center;">
       <p>Realizzato da Tancredi Mellini</p>
       <p>Per il corso di Reti di Calcolatori</p>
-  </footer>
+    </footer>
 
   <script src="quiz.js"></script>
 </body>

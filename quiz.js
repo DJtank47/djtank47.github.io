@@ -1,3 +1,5 @@
+// DICHIARAZIONE COSTANTI E VARIABILI
+
 // Array di oggetti JSON contenente le domande del quiz, le opzioni e la risposta corretta
 const quizData = [
     {
@@ -52,85 +54,81 @@ const quizData = [
       },
 ];
 
-const questionElement = document.getElementById("question");
-const optionsElement = document.getElementById("options");
-const questionNumberElement = document.getElementById("question-number"); // Elemento per il numero della domanda
-const feedbackElement = document.getElementById("feedback"); // Elemento per il feedback
-const submitButton = document.getElementById("next"); // Bottone per passare alla prossima domanda
+const questionElement = document.getElementById("question");                // Elemento per la domanda
+const optionsElement = document.getElementById("options");                  // Elemento per le opzioni di risposta
+const questionNumberElement = document.getElementById("question-number");   // Elemento per il numero della domanda
+const feedbackElement = document.getElementById("feedback");                // Elemento per il feedback
+const submitButton = document.getElementById("next");                       // Bottone per passare alla prossima domanda
+submitButton.addEventListener("click", nextQuestion);                       // EventListener per passare alla domanda successiva
 
+let answered = false;       // Variabile per controllare se l'utente ha già risposto alla domanda corrente
 
-let answered = false; //variabile per controllare se l'utente ha risposto alla domanda corrente
+let currentQuestion = 0;    // Indice della domanda corrente
+let score = 0;              // Punteggio dell'utente
 
-let currentQuestion = 0;
-let score = 0;
+// DICHIARAZIONE FUNZIONI
 
+// Funzione per mostrare la domanda corrente
 function showQuestion() {
-    const question = quizData[currentQuestion];
-    questionNumberElement.innerText = `Domanda ${currentQuestion + 1}`; // Aggiorna il numero della domanda
-    questionElement.innerText = question.question;
+    const question = quizData[currentQuestion];                         // Ottiene la domanda corrente
 
-    optionsElement.innerHTML = "";
-    feedbackElement.innerText = ""; // Resetta il feedback
+    questionNumberElement.innerText = `Domanda ${currentQuestion + 1}`; // Inserisce il numero della domanda nell'elemento html
+    questionElement.innerText = question.question;                      // Inserisce la domanda nell'elemento html
 
-    question.options.forEach(option => {
-        const button = document.createElement("button");
-        button.innerText = option;
-        optionsElement.appendChild(button);
-        button.addEventListener("click", selectAnswer);
+    optionsElement.innerHTML = "";      // Pulisce le opzioni di risposta
+    feedbackElement.innerText = "";     // Pulisce il feedback
+
+    question.options.forEach(option => {    // Ciclo per ogni opzione di risposta
+        const button = document.createElement("button");    // Crea un bottone
+        button.innerText = option;                          // Inserisce il testo nel bottone
+        optionsElement.appendChild(button);                 // Aggiunge il bottone creato al DOM
+        button.addEventListener("click", selectAnswer);     // Aggiunge un evento click al bottone
     });
 
-    submitButton.addEventListener("click", nextQuestion);
 }
 
+// Funzione per verificare la risposta selezionata
 function selectAnswer(e) {
 
-    if (!answered) {
+    if (!answered) {    //procede solo se l'utente non ha già risposto, così facendo posso selezionare la risposta solo una volta
         const selectedButton = e.target;
-    const answer = quizData[currentQuestion].answer;
+        const answer = quizData[currentQuestion].answer;
 
-    if (selectedButton.innerText === answer) {
-        score++;
-        feedbackElement.innerText = "Risposta corretta!"; // Feedback per la risposta corretta
-        feedbackElement.style.color = "green";
-    } else {
-        feedbackElement.innerText = `SBAGLIATO! La risposta corretta era: "${answer}".`; // Feedback per la risposta sbagliata
-        feedbackElement.style.color = "red";
-    }
-    answered = true;
-    }
-
-    /*currentQuestion++;
-
-    setTimeout(() => {
-        if (currentQuestion < quizData.length) {
-            showQuestion();
+        if (selectedButton.innerText === answer) {  // Controllo se la risposta selezionata è uguale a quella corretta
+            score++;
+            feedbackElement.innerText = "Risposta corretta!"; // Feedback per la risposta corretta
+            feedbackElement.style.color = "green";
         } else {
-            showResult();
+            feedbackElement.innerText = `SBAGLIATO! La risposta corretta era: "${answer}".`; // Feedback per la risposta sbagliata
+            feedbackElement.style.color = "red";
         }
-    }, 2000); // Pausa prima di mostrare la prossima domanda o il risultato
-    */
+        answered = true;    // Segno che l'utente ha risposto
+    }
 }
 
+// Funzione per passare alla prossima domanda o al risultato finale
 function nextQuestion() {
-    if(answered) {
+    if(answered) {  // Controllo se l'utente ha già risposto alla domanda, in caso non abbia risposto non procedo
+        
         currentQuestion++;
-        if (currentQuestion < quizData.length) {
+        if (currentQuestion < quizData.length) { // Controllo se ho finito le domande
             showQuestion();
         } else {
             showResult();
         }
-        answered = false;
+        answered = false; // Resetta la variabile per la risposta
+
     }else{
         alert("Devi rispondere alla domanda prima di passare alla successiva!");
     }
 }
 
-
+// Funzione per mostrare il risultato finale
 function showResult() {
     let message = "";
     let image = "";
 
-    // Imposta un messaggio in base al punteggio ottenuto
+    // Imposta un messaggio e un'immagine in base al punteggio ottenuto
     if (score === quizData.length) {
         message = "Perfetto! Sei un vero esperto di Kakà! Complimenti!";
         image = "img/result1.jpg";
@@ -148,7 +146,7 @@ function showResult() {
         image = "img/result5.jpg";
     }
 
-    // Mostra il risultato e il messaggio
+    //Crea l'elemento html con il risultato, l'immagine e il messaggio
     quiz.innerHTML = `
       <h1>Quiz Completato!</h1>
         <img src="${image}" alt="Risultato" style="max-width:400px; max-height: 300px;"/>
@@ -157,6 +155,7 @@ function showResult() {
     `;
 }
 
+// ESECUZIONE DEL CODICE
 
 // Mostra la prima domanda quando la pagina viene caricata
 showQuestion();

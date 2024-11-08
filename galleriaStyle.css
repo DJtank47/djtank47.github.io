@@ -3,14 +3,13 @@
     max-width: 100%; /* Occupa tutta la larghezza disponibile */
     margin: auto;
     overflow: hidden; /* Assicura che le frecce non escano dai bordi */
-    background-color: rgba(51, 51, 51, 0.6);; /* Sfondo semi-trasparente */
+    background-color: rgba(51, 51, 51, 0.6); /* Sfondo semi-trasparente */
     border-radius: 10px;
     color: #fff;
 }
 
 .mySlides {
     display: none;
-    position: relative;
     text-align: center; /* Centra l'immagine e la descrizione */
 }
 
@@ -26,7 +25,6 @@ img {
     font-size: 18px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.6); /* Sfondo semi-trasparente */
-    margin-top: 0; /* Un piccolo margine negativo per far combaciare lo sfondo con l'immagine */
 }
 
 
@@ -42,7 +40,6 @@ img {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.6);
-    /*z-index: 10; /* Assicura che siano sopra le immagini */
 }
 
 .next {

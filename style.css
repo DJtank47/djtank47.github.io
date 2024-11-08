@@ -3,16 +3,16 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    /*color: #333;*/
 }
 main {
-    max-width: 80%; /* Larghezza del main */
+    max-width: 80%;
     min-height: 500px;
     margin: 0 auto; /* Centra il main */
-    position: relative; /* Necessario per il layering */
     padding: 20px; /* Spaziatura interna */
+    text-align: center;
     color: white; /* Colore del testo */
-    background: linear-gradient(
+    
+    background: linear-gradient( /* Effetto sfondo immagine con grigio semi trasparente */
         rgba(128, 128, 128, 0.6), 
         rgba(128, 128, 128, 0.6)
     ), url('https://media.gqitalia.it/photos/64525dc8a58348bef0abb6ad/4:3/w_1440,h_1080,c_limit/MAGLIE%20MILAN.jpg');
@@ -20,6 +20,7 @@ main {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
+
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Effetto ombra */
 }
 
@@ -42,11 +43,6 @@ header{
 a {
     text-decoration: none;
     color: white;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
 }
 
-main {
-    padding: 20px;
-    text-align: center;
-}
