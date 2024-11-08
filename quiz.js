@@ -25,17 +25,17 @@ const quizData = [
     {
         question: "In quale competizione europea ha vinto Kakà il suo primo trofeo con l'AC Milan?",
         options: ["Coppa UEFA", "Supercoppa UEFA", "UEFA Champions League", "Coppa Italia"],
-        answer: "UEFA Champions League"
+        answer: "Supercoppa UEFA"
     },
     {
         question: "Qual è il soprannome di Kakà?",
-        options: ["O Rei", "Il Fenomeno", "Il Maestro", "Kakinha" ],
-        answer: "Kakinha"
+        options: ["Ricky", "Il Fenomeno", "Il Maestro", "Kakinha" ],
+        answer: "Ricky"
     },
     {
         question: "In quale anno Kakà ha lasciato l'AC Milan per trasferirsi al Real Madrid?",
-        options: ["2008", "2010", "2012", "2014"],
-        answer: "2008"
+        options: ["2008", "2009", "2010", "2012"],
+        answer: "2009"
     },
     {
         question: "Quale squadra Kakà ha affrontato quando ha segnato il suo primo gol in Champions League con l'AC Milan?",
